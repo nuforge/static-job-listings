@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Frontend Mentor | Job Listings</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header class="header">
+
+    </header>
+    <main class="main">
+
+      <div class="container filters" v-if="filters.length !== 0">
+        <div class="filter" v-for="filter in filters" :key="filter">
+          <div class="filter__text">{{ filter }} </div>
+          <div class="filter__icon"  @click="removeFromFilters(filter)"><img src="images/icon-remove.svg" alt="Remove"/></div>
+        </div>
+      </div>
+
+      <div class="container jobs">
+        <div v-for="(job, index) in jobListings" :key="index" :class="{job: true, featured: job.featured}">
+          <div class="job__logo"><img :src="job.logo" /></div>
+          <div class="job__information">
+            <div class="job__company">
+              {{ job.company }}
+              <div class="job__badge job__new" v-if="job.new">New</div>
+              <div class="job__badge job__featured" v-if="job.featured">Featured</div>
+            </div>
+            <div class="job__position">{{ job.position }} </div>
+            <div class="job__details">{{ job.postedAt }} &bull; {{ job.contract }} &bull; {{ job.location }}</div>
+          </div>
+          <div class="job__tags">
+            <div class="tag job__tags--languages" v-for="(language, lindex) in job.languages" :key="lindex" @click="addToFilters(language)">{{language}}</div>
+            <div class="tag job__tags--tools" v-for="(tool, tindex) in job.tools" :key="tindex" @click="addToFilters(tool)">{{tool}}</div>
+          </div>
+        </div>
+    </div>
+    </main>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
