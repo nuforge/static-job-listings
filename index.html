@@ -33,7 +33,7 @@
       </div>
 
       <div class="container jobs">
-        <div v-for="(job, index) in jobListings" :key="index" :class="{job: true, featured: job.featured}">
+        <div v-for="(job, index) in filteredList" :key="index" :class="{job: true, featured: job.featured}">
           <div class="job__logo"><img :src="job.logo" /></div>
           <div class="job__information">
             <div class="job__company">

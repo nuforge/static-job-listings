@@ -22,6 +22,18 @@ let app = Vue.createApp({
                 this.filters.splice(index, 1);
             }
         }
+    },
+    computed: {
+        filteredList () {
+            if (this.filters.length > 0 ) {
+                return this.jobListings.filter(job => {
+                    let newList = job.languages.concat(job.tools);
+                    return (this.filters.every(r => newList.includes(r)));
+                });
+            } else {
+                return this.jobListings;
+            }
+        }
     }
 });
 
