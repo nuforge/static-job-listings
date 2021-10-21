@@ -40,12 +40,23 @@ body {
 
 .filters {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     background: var(--white);
     border-radius: .5rem;
     padding: 1rem;
-    gap: 1rem;
     transform: translateY(-50%);
+}
+
+.filters__tray {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: .5rem;
+    gap: 1rem;
+}
+
+.filters__clear {
+    cursor: pointer;
 }
 
 .filter {

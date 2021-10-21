@@ -21,6 +21,9 @@ let app = Vue.createApp({
             if (index > -1) {
                 this.filters.splice(index, 1);
             }
+        },
+        clearFilters () {
+            this.filters = [];
         }
     },
     computed: {

@@ -26,10 +26,13 @@
     <main class="main">
 
       <div class="container filters" v-if="filters.length !== 0">
-        <div class="filter" v-for="filter in filters" :key="filter">
-          <div class="filter__text">{{ filter }} </div>
-          <div class="filter__icon"  @click="removeFromFilters(filter)"><img src="images/icon-remove.svg" alt="Remove"/></div>
+        <div class="filters__tray">
+          <div class="filter" v-for="filter in filters" :key="filter">
+            <div class="filter__text">{{ filter }} </div>
+            <div class="filter__icon"  @click="removeFromFilters(filter)"><img src="images/icon-remove.svg" alt="Remove"/></div>
+          </div>
         </div>
+        <div class="filters__clear" @click="clearFilters">Clear</div>
       </div>
 
       <div class="container jobs">
