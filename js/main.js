@@ -7,7 +7,7 @@ let app = Vue.createApp({
     data() {
         return {
             jobListings: [],
-            filters: ['CSS']
+            filters: []
         }
     },
     methods: {

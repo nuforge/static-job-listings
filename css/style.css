@@ -56,16 +56,21 @@ body {
 }
 
 .filters__clear {
+    color: var(--cyan);
     cursor: pointer;
+}
+
+.filters__clear:hover {
+    text-decoration: underline;
 }
 
 .filter {
     display: flex;
     align-items: center;
     overflow: hidden;
-    
     font-size: .8rem;
     border-radius: .5rem;
+    font-weight: 700;
     background: var(--light-grayish-cyan-filter-tablets);
     color: var(--cyan);
     cursor: pointer;
@@ -79,6 +84,10 @@ body {
 .filter__icon {
     background: var(--dark-grayish-cyan);
     padding: .5rem 1rem;
+}
+
+.filter__icon:hover {
+    background: var(--very-dark-grayish-cyan);
 }
 
 .jobs {
@@ -139,7 +148,12 @@ body {
 }
 
 .job__position {
+    cursor: pointer;
     font-weight: 700;
+}
+
+.job__position:hover {
+    color: var(--cyan);
 }
 
 .job__details {
@@ -157,8 +171,10 @@ body {
 
 .tag {
     font-size: .8rem;
+    line-height: 1;
     border-radius: .5rem;
     padding: .5rem 1rem;
+    font-weight: 700;
     background: var(--light-grayish-cyan-filter-tablets);
     color: var(--cyan);
     cursor: pointer;
